@@ -8,11 +8,11 @@ import Link from "next/link";
 export function Header() {
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
-    setOpen(!open);
-    const el = document.getElementById("trusted");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  // const handleClick = () => {
+  //   setOpen(!open);
+  //   const el = document.getElementById("trusted");
+  //   if (el) el.scrollIntoView({ behavior: "smooth" });
+  // };
 
   const pathname = usePathname();
   const isContactPage = pathname === "/contact-us";
