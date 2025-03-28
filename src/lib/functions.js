@@ -1,9 +1,9 @@
 // src/lib/functions.js
 
 // Animate tab links with GSAP
-export function animateTabLinks() {
+export async function animateTabLinks() {
   if (typeof window !== "undefined") {
-    const gsap = require("gsap");
+    const gsap = (await import("gsap")).default;
 
     document.addEventListener("DOMContentLoaded", () => {
       gsap.from(".tab-link", {
