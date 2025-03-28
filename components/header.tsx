@@ -12,11 +12,11 @@ export function Header() {
   const isHomePage = pathname === "/";
   const headerBgClass = isHomePage ? "bg-transparent" : "bg-brand-green";
 
-  const handleClick = () => {
-    setOpen(!open);
-    const el = document.getElementById("trusted");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  //const handleClick = () => {
+  // setOpen(!open);
+  //  const el = document.getElementById("trusted");
+  //  if (el) el.scrollIntoView({ behavior: "smooth" });
+  //};
 
   return (
     <header className={`w-full py-4 ${headerBgClass}`}>
