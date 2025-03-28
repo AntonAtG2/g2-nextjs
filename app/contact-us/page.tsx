@@ -1,6 +1,6 @@
 import ContactHero from "@/components/sections/ContactHero";
 import SubMenu from "@/components/sections/SubMenu";
-import FullWidthImage from "@/components/sections/FullWidthImageSection";
+import FullWidthImageSection from "@/components/sections/FullWidthImageSection";
 
 export const metadata = {
   title: "Contact Spotted Owl | Emergency Services in Stellenbosch",
@@ -21,10 +21,7 @@ export default function ContactUs() {
     <>
       <ContactHero />
       <SubMenu />
-      <FullWidthImage
-        src="/assets/images/spotted-owl-branded-van.jpg"
-        alt="Spotted Owl Branded Van"
-      />
+      <FullWidthImageSection />
     </>
   );
 }
