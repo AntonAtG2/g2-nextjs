@@ -1,17 +1,23 @@
+// components/sections/FullWidthImage.tsx
+"use client";
+
 import Image from "next/image";
 
-export default function FullWidthImageSection() {
+interface FullWidthImageProps {
+  src: string;
+  alt: string;
+}
+
+export default function FullWidthImage({ src, alt }: FullWidthImageProps) {
   return (
-    <section className="w-full">
-      <div className="relative w-full h-[500px] md:h-[800px] lg:h-[1000px]">
-        <Image
-          src="/assets/images/spotted-owl-branded-van.jpg"
-          alt="Spotted Owl Branded Van"
-          fill
-          className="object-cover"
-          priority // optional if you want it to load faster
-        />
-      </div>
-    </section>
+    <div className="w-full">
+      <Image
+        src={src}
+        alt={alt}
+        width={1920}
+        height={1080}
+        className="w-full h-auto"
+      />
+    </div>
   );
 }
