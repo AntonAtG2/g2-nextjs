@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ninja Forms Styling */
+.nf-form-cont,
+.nf-form-fields-wrap {
+  @apply bg-white rounded-3xl px-4 py-4 shadow-none;
+  box-shadow: none !important;
+}
+
+.nf-field-container input,
+.nf-field-container select {
+  @apply w-full bg-brand-light-green bg-opacity-50 border rounded-2xl px-4 py-3 text-gray-900 placeholder-gray-500 focus:outline-none;
+}
+
+.nf-field-container button,
+.nf-form-cont input[type="submit"],
+.nf-form-cont button {
+  @apply w-full bg-brand-yellow py-3 px-4 rounded-3xl text-lg font-bold uppercase hover:bg-brand-green transition hover:text-white;
+}
+
+.nf-field-container select {
+  appearance: none;
+}
