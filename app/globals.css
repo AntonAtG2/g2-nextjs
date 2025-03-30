@@ -71,7 +71,7 @@ body.homepage::before {
 
 @media (min-width: 1024px) {
   #dynamic-bg-section {
-    background-image: url('/assets/images/spotted-owl-desktop.jpg');
+    background-image: url('/assets/images/spotted-owl-desktop.webp');
   }
 }
 

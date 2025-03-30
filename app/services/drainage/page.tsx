@@ -1,3 +1,4 @@
+import { fetchAboutUsContent } from "@/lib/graphql/fetchers/fetchAboutUs";
 import SectionBanner from "@/components/sections/SectionBanner";
 import SubMenu from "@/components/sections/SubMenu";
 import DrainageServiceDetails from "@/components/sections/DrainageServiceDetails";
@@ -6,7 +7,9 @@ import FullWidthImageSection from "@/components/sections/FullWidthImageSection";
 import AboutUs from "@/components/sections/AboutUs";
 import OurPhilosphy from "@/components/sections/OurPhilosphy";
 
-export default function GasService() {
+export default async function DrainageService() {
+  const content = await fetchAboutUsContent();
+
   return (
     <>
       <SectionBanner
@@ -19,7 +22,7 @@ export default function GasService() {
       <DrainageServiceDetails />
       <WhyChoose />
       <FullWidthImageSection />
-      <AboutUs />
+      <AboutUs content={content} />
       <OurPhilosphy />
     </>
   );
