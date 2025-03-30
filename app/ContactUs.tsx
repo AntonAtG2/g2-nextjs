@@ -1,12 +1,15 @@
 import HeroBanner from "@/components/sections/HeroBanner";
+import { fetchAboutUsContent } from "@/lib/graphql/fetchers/fetchAboutUs";
+import AboutUs from "@/components/sections/AboutUs";
 import SubMenu from "@/components/sections/SubMenu";
 import OurServices from "@/components/sections/OurServices";
 import WhyChoose from "@/components/sections/WhyChoose";
 import FullWidthImageSection from "@/components/sections/FullWidthImageSection";
-import AboutUs from "@/components/sections/AboutUs";
 import OurPhilosphy from "@/components/sections/OurPhilosphy";
 
-export default function HomePage() {
+export default async function ContactUsPage() {
+  const content = await fetchAboutUsContent();
+
   return (
     <main>
       <HeroBanner />
@@ -14,7 +17,7 @@ export default function HomePage() {
       <OurServices />
       <WhyChoose />
       <FullWidthImageSection />
-      <AboutUs />
+      <AboutUs content={content} />
       <OurPhilosphy />
     </main>
   );
