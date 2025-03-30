@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type SectionBannerProps = {
   heading: string;
   description: string;
@@ -15,13 +17,11 @@ export default function SectionBanner({
     <section
       className={`relative w-full min-h-[50vh] ${bg} flex items-center justify-center`}
     >
-      {/* Icon */}
       <Image
         src={icon}
         alt={`${heading} Icon`}
         className="absolute top-1/4 left-1/4 w-[200px] md:w-[300px] plumbing-icon"
       />
-      {/* Content */}
       <div className="container mx-auto max-w-7xl px-6 lg:px-12">
         <h2 className="text-4xl sm:text-6xl font-bold text-white uppercase">
           {heading}
