@@ -1,41 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+Description
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+The Spotted Owl Website Design and Development Project falls within our Small to Medium pricing framework, offering a standard 5-page website. This includes the following main menu pages: Homepage, About Us, Our Services, How We Work, Pricing, and Contact. The site will not feature custom or complex components, with minimal or no hover animations. All content, including text and images, will be supplied by the client.
 
-# testing
-/coverage
 
-# next.js
-/.next/
-/out/
+Optional Items Explanation
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+Please note that the Blog and Academy sections fall outside the scope of this project. However, we will apply the agreed look and feel to the first page of each section. The roll-out of additional pages for these sections will need to be managed by the Eco Africa team. Should further assistance be required, additional pages can be quoted for separately and implemented accordingly.

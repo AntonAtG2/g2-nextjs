@@ -35,12 +35,21 @@ html {
 
 body {
   color: var(--color-foreground);
-  background-image: url('/assets/images/spotted-owl-desktop.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
   font-family: var(--font-sans);
+}
+
+body.homepage::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/assets/images/spotted-owl-desktop.webp");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
 
 /* Optional custom utility class */
@@ -49,3 +58,20 @@ body {
     @apply bg-brand-yellow text-black px-4 py-2 rounded;
   }
 }
+
+#dynamic-bg-section {
+  background-image: url('/assets/images/spotted-owl-mobile.webp');
+}
+
+@media (min-width: 640px) {
+  #dynamic-bg-section {
+    background-image: url('/assets/images/spotted-owl-tablet.webp');
+  }
+}
+
+@media (min-width: 1024px) {
+  #dynamic-bg-section {
+    background-image: url('/assets/images/spotted-owl-desktop.jpg');
+  }
+}
+
