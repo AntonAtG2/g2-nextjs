@@ -40,7 +40,7 @@ body {
   font-family: var(--font-sans);
 }
 
-body.homepage::before {
+/* body.homepage::before {
   content: "";
   position: fixed;
   top: 0;
@@ -52,7 +52,7 @@ body.homepage::before {
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-}
+} */
 
 /* Optional custom utility class */
 @layer utilities {
