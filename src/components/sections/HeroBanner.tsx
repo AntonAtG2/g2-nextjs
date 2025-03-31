@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function HeroBanner() {
   const [open, setOpen] = useState(false);
@@ -20,11 +21,18 @@ export default function HeroBanner() {
 
   return (
     <section
-      id="dynamic-bg-section"
-      className={`relative z-0 min-h-screen bg-cover bg-left-top ${
-        isHomePage ? "-mt-20" : ""
-      }`}
+      className={`relative z-0 min-h-screen ${isHomePage ? "-mt-20" : ""}`}
     >
+      {/* Optimised background image */}
+      <Image
+        src="/assets/images/spotted-owl-desktop.webp"
+        alt="Spotted Owl branded van"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-left-top -z-10"
+      />
+
       <div className="grid grid-cols-12 min-h-screen justify-start pt-[50vh] sm:pt-[50vh] md:pt-[50vh] lg:pt-[40vh] xl:pt-[30vh]">
         <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-4 lg:col-span-5 lg:col-start-7 relative isolate flex flex-col items-start space-y-6">
           <div className="w-full">
