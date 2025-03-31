@@ -2,6 +2,8 @@
 
 /* Light mode variables */
 :root {
+  --font-open-sans: 'Open Sans';
+  --font-sans: var(--font-open-sans), sans-serif;
   --background: #ffffff;
   --foreground: #171717;
   --color-brand-yellow: #E1E332;
