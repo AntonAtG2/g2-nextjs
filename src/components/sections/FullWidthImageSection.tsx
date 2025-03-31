@@ -1,15 +1,18 @@
 import Image from "next/image";
+import vanImage from "@/assets/images/spotted-owl-desktop.webp";
 
 export default function FullWidthImageSection() {
   return (
-    <div className="w-full">
-      <Image
-        src="/assets/images/spotted-owl-branded-van.webp"
-        alt="Spotted Owl Branded Van"
-        width={1920}
-        height={1080}
-        className="w-full h-auto object-cover"
-      />
-    </div>
+    <Image
+      src="/assets/images/spotted-owl-desktop.webp"
+      alt="Spotted Owl branded van"
+      fill
+      priority
+      loading="eager"
+      placeholder="blur"
+      blurDataURL={vanImage.blurDataURL}
+      sizes="100vw"
+      className="object-cover object-left-top -z-10"
+    />
   );
 }
