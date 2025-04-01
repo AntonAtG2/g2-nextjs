@@ -1,9 +1,11 @@
 import Image from "next/image";
+
 type SectionBannerProps = {
   heading: string;
   description: string;
   bg: string;
   icon: string;
+  className?: string; // Optional className prop for customization
 };
 
 export default function SectionBanner({
@@ -11,10 +13,11 @@ export default function SectionBanner({
   description,
   bg,
   icon,
+  className = "", // default to an empty string if no className is passed
 }: SectionBannerProps) {
   return (
     <section
-      className={`relative w-full min-h-[50vh] ${bg} flex items-center justify-center`}
+      className={`relative w-full min-h-[50vh] ${bg} flex items-center justify-center ${className}`}
     >
       <Image
         src={icon}
