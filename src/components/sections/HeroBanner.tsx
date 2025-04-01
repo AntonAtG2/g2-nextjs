@@ -29,8 +29,9 @@ export default function HeroBanner() {
         alt="Spotted Owl branded van"
         fill
         priority
+        fetchPriority="high"
         sizes="100vw"
-        className="object-cover object-left-top -z-10"
+        className="object-cover object-center -z-10"
       />
 
       <div className="grid grid-cols-12 min-h-screen justify-start pt-[50vh] sm:pt-[50vh] md:pt-[50vh] lg:pt-[40vh] xl:pt-[30vh]">
