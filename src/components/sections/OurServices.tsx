@@ -30,13 +30,13 @@ export default function OurServices() {
                     We offer all plumbing services from leak detection and
                     repairs to complete new installations.
                   </p>
-                  <a
+                  <Link
                     href="/contact-us"
                     className="inline-block min-w-[240px] min-h-[70px] mt-4 md:mt-7 rounded-full bg-brand-green text-brand-yellow text-base font-semibold shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center leading-[70px]"
                     aria-label="Book now – go to contact page"
                   >
                     BOOK NOW
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -57,13 +57,13 @@ export default function OurServices() {
                     Our qualified electricians handle fault finding, repairs,
                     improvements and CoCs.
                   </p>
-                  <a
+                  <Link
                     href="/contact-us"
                     className="inline-block self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center"
                     aria-label="Book now – go to contact page"
                   >
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -85,13 +85,13 @@ export default function OurServices() {
                     Our qualified field engineers handle CCTV inspections,
                     drain-jetting and chemical cleaning.
                   </p>
-                  <a
+                  <Link
                     href="/contact-us"
                     className="inline-block self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center"
                     aria-label="Book now – go to contact page"
                   >
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -112,13 +112,13 @@ export default function OurServices() {
                     For your fireplace, gas geyser or stove we handle repairs,
                     installations and even leak-detection.
                   </p>
-                  <a
+                  <Link
                     href="/contact-us"
                     className="inline-block self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center"
                     aria-label="Book now – go to contact page"
                   >
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
