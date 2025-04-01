@@ -14,10 +14,10 @@ export default function OurServices() {
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid gap-x-32 gap-y-32 items-center md:items-start md:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
               <div className="flex flex-col h-full">
-                <dd className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
+                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
                   <Image
                     src="/assets/icons/plumbing-icon-in-circle.jpg"
-                    alt="Plumbing icon"
+                    alt="Plumbing Services Icon"
                     width={144} // w-36 = 9rem = 144px
                     height={144} // h-36 = 9rem = 144px
                     className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
@@ -38,14 +38,14 @@ export default function OurServices() {
                       Book Now
                     </button>
                   </Link>
-                </dd>
+                </div>
               </div>
 
               <div className="flex flex-col h-full">
-                <dd className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
+                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
                   <Image
                     src="/assets/icons/electrical-icon-in-circle.jpg"
-                    alt="Plumbing icon"
+                    alt="Electrical Services Icon"
                     width={144} // w-36 = 9rem = 144px
                     height={144} // h-36 = 9rem = 144px
                     className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
@@ -66,14 +66,14 @@ export default function OurServices() {
                       Book Now
                     </button>
                   </a>
-                </dd>
+                </div>
               </div>
 
               <div className="flex flex-col h-full">
-                <dd className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
+                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
                   <Image
                     src="/assets/icons/drainage-icon-in-circle.jpg"
-                    alt="Plumbing icon"
+                    alt="Drainage Services Icon"
                     width={144} // w-36 = 9rem = 144px
                     height={144} // h-36 = 9rem = 144px
                     className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
@@ -95,14 +95,14 @@ export default function OurServices() {
                       Book Now
                     </button>
                   </a>
-                </dd>
+                </div>
               </div>
 
               <div className="flex flex-col h-full">
-                <dd className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
+                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
                   <Image
                     src="/assets/icons/gas-icon-in-circle.jpg"
-                    alt="Plumbing icon"
+                    alt="Gas Serives Icon"
                     width={144} // w-36 = 9rem = 144px
                     height={144} // h-36 = 9rem = 144px
                     className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
@@ -119,11 +119,12 @@ export default function OurServices() {
                     <button
                       type="button"
                       className="self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase"
+                      aria-label="Book now – go to contact page"
                     >
                       Book Now
                     </button>
                   </a>
-                </dd>
+                </div>
               </div>
             </dl>
           </div>

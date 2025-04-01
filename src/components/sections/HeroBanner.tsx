@@ -70,6 +70,7 @@ export default function HeroBanner() {
                       type="button"
                       onClick={() => setDropdownOpen(!dropdownOpen)}
                       className="w-full flex justify-between items-center bg-brand-light-green bg-opacity-50 border rounded-2xl px-4 py-3 font-normal text-base"
+                      aria-label="Book now – go to contact page"
                     >
                       <span>{selectedService}</span>
                       <svg

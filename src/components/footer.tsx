@@ -22,7 +22,7 @@ export default function Footer() {
                 <span className="sr-only">Facebook</span>
                 <Image
                   src="/assets/icons/facebook.svg"
-                  alt="Facebook"
+                  alt="Contact Us on Facebook"
                   className="w-7 h-7 mr-2"
                   width={28}
                   height={28}
@@ -32,7 +32,7 @@ export default function Footer() {
                 <span className="sr-only">X</span>
                 <Image
                   src="/assets/icons/x.svg"
-                  alt="X (Twitter)"
+                  alt="Contact Us on X)"
                   className="w-7 h-7 mr-2"
                   width={28}
                   height={28}
@@ -42,7 +42,7 @@ export default function Footer() {
                 <span className="sr-only">Instagram</span>
                 <Image
                   src="/assets/icons/instagram.svg"
-                  alt="Instagram"
+                  alt="Find Us On Instagram"
                   className="w-7 h-7 mr-2"
                   width={28}
                   height={28}

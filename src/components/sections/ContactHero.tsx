@@ -33,11 +33,12 @@ export default function ContactHero() {
               <a
                 href="https://wa.me/27689051886"
                 className="flex items-center gap-4"
+                aria-label="Contact Us on WhatsApp"
                 target="_blank"
               >
                 <Image
                   src="/assets/icons/whatsapp.svg"
-                  alt="WhatsApp"
+                  alt="Contact Us on WhatsApp"
                   className="w-7 h-7 flex-shrink-0"
                   width={28}
                   height={28}

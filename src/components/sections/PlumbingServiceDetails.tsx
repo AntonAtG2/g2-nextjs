@@ -16,10 +16,10 @@ export default function PlumbingServiceDetails() {
           {/* Content */}
           <div className="mx-auto mt-16 max-w-2xl lg:max-w-none">
             <div className="flex flex-col h-full">
-              <dd className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
+              <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
                 <Image
                   src="/assets/icons/plumbing-icon-in-circle.jpg"
-                  alt="Olumbing icon"
+                  alt="Plumbing Services Icon"
                   width={208}
                   height={208}
                   className="w-36 h-36 sm:w-52 sm:h-52 self-center md:self-start"
@@ -88,10 +88,11 @@ export default function PlumbingServiceDetails() {
                 <button
                   type="button"
                   className="self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green min-w-[240px] min-h-[70px] text-base font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase"
+                  aria-label="Book now – go to contact page"
                 >
                   Book Now
                 </button>
-              </dd>
+              </div>
             </div>
           </div>
         </div>
