@@ -1,14 +1,12 @@
-export interface AboutUsContent {
+// src/types/graphql.ts
+export type AboutUsLayout = {
+  __typename: "FlexibleContentSectionsAboutUsSectionAboutUsLayout"; // Ensure the __typename is included
   header: string;
   paragraphRepeater: { singleParagraph: string }[];
-  backgroundImage: {
+  backgroundImage?: {
     node: {
       sourceUrl: string;
       altText?: string;
-      mediaDetails?: {
-        width: number;
-        height: number;
-      };
     };
   };
-}
+};

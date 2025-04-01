@@ -1,3 +1,4 @@
+// app/services/drainage/page.tsx
 import { fetchAboutUsContent } from "@/lib/graphql/fetchers/fetchAboutUs";
 import SectionBanner from "@/components/sections/SectionBanner";
 import SubMenu from "@/components/sections/SubMenu";
@@ -6,9 +7,10 @@ import WhyChoose from "@/components/sections/WhyChoose";
 import FullWidthImageSection from "@/components/sections/FullWidthImageSection";
 import RenderFlexibleSections from "@/components/RenderFlexibleSections";
 import OurPhilosphy from "@/components/sections/OurPhilosphy";
+import { AboutUsLayout } from "@/types/graphql"; // Import the AboutUsLayout type
 
 export default async function DrainageService() {
-  const sections = await fetchAboutUsContent();
+  const sections: AboutUsLayout[] = await fetchAboutUsContent(); // Ensure the correct type
 
   return (
     <>
