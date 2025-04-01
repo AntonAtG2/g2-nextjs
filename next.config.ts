@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'spotted-owl.g2dev.co.za',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

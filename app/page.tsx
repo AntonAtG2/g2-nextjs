@@ -5,26 +5,39 @@ import SubMenu from "@/components/sections/SubMenu";
 import OurServices from "@/components/sections/OurServices";
 import WhyChoose from "@/components/sections/WhyChoose";
 import FullWidthImageSection from "@/components/sections/FullWidthImageSection";
-import AboutUs from "@/components/sections/AboutUs";
 import OurPhilosphy from "@/components/sections/OurPhilosphy";
+import RenderFlexibleSections from "@/components/RenderFlexibleSections";
 
 const GRAPHQL_ENDPOINT = "https://spotted-owl.g2dev.co.za/graphql";
 
-type AboutUsData = {
-  aboutUsEntries: {
-    nodes: {
-      title: string;
-      aboutUsContent: {
-        aboutUsHeading: string;
-        aboutUsParagraph: string;
-      };
-    }[];
+type AboutUsSection = {
+  __typename: "FlexibleContentSectionsAboutUsSectionAboutUsLayout";
+  header: string;
+  paragraphRepeater: { singleParagraph: string }[];
+  backgroundImage?: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+    };
+  };
+};
+
+type FlexibleContentData = {
+  page: {
+    flexibleContentSections: {
+      aboutUsSection: AboutUsSection[];
+    };
   };
 };
 
 export default async function HomePage() {
-  const data: AboutUsData = await request(GRAPHQL_ENDPOINT, ABOUT_US_QUERY);
-  const content = data.aboutUsEntries?.nodes?.[0]?.aboutUsContent || null;
+  const data: FlexibleContentData = await request(
+    GRAPHQL_ENDPOINT,
+    ABOUT_US_QUERY
+  );
+  const sections = data.page?.flexibleContentSections?.aboutUsSection || [];
+
+  console.log("✅ About Us Sections:", sections);
 
   return (
     <main>
@@ -33,7 +46,7 @@ export default async function HomePage() {
       <OurServices />
       <WhyChoose />
       <FullWidthImageSection />
-      <AboutUs content={content} />
+      <RenderFlexibleSections sections={sections} />
       <OurPhilosphy />
     </main>
   );

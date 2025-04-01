@@ -1,12 +1,14 @@
-export type AboutUsData = {
-    aboutUsEntries: {
-      nodes: {
-        title: string;
-        aboutUsContent: {
-          aboutUsHeading: string;
-          aboutUsParagraph: string;
-        };
-      }[];
+export interface AboutUsContent {
+  header: string;
+  paragraphRepeater: { singleParagraph: string }[];
+  backgroundImage: {
+    node: {
+      sourceUrl: string;
+      altText?: string;
+      mediaDetails?: {
+        width: number;
+        height: number;
+      };
     };
   };
-  
+}

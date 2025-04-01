@@ -1,3 +1,51 @@
+type AboutUsData = {
+  aboutUsEntries: {
+    nodes: {
+      title: string;
+      aboutUsContent: {
+        aboutUsHeading: string;
+        aboutUsParagraph: string;
+      };
+    }[];
+  };
+};
+
+import { request } from "graphql-request";
+import { ABOUT_US_QUERY } from "@/lib/queries"; // or define inline
+
+const GRAPHQL_ENDPOINT = "https://spotted-owl.g2dev.co.za/graphql";
+
+// ✅ Server-side logging during build
+export async function getStaticProps() {
+  try {
+    console.log("🧪 Checking ABOUT_US_QUERY import...");
+    console.log("🧪 ABOUT_US_QUERY value:", ABOUT_US_QUERY);
+
+    const data: AboutUsData = await request(GRAPHQL_ENDPOINT, ABOUT_US_QUERY);
+    console.log("✅ Raw GraphQL response:", JSON.stringify(data, null, 2));
+
+    const content = data?.aboutUsEntries?.nodes?.[0]?.aboutUsContent || null;
+
+    if (!content) {
+      console.warn("⚠️ No content found for About Us section.");
+    }
+
+    return {
+      props: {
+        content,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.error("❌ GraphQL fetch failed:", error);
+    return {
+      props: {
+        content: null,
+      },
+    };
+  }
+}
+
 type AboutUsProps = {
   content: {
     aboutUsHeading: string;
@@ -5,7 +53,12 @@ type AboutUsProps = {
   } | null;
 };
 
+// ✅ Client-side logging during hydration/debug
 export default function AboutUs({ content }: AboutUsProps) {
+  if (typeof window !== "undefined") {
+    console.log("🧪 Rendering About Us component with content:", content);
+  }
+
   return (
     <section
       aria-label="About The Spotted Owl"
