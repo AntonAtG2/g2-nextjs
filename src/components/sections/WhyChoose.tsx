@@ -9,48 +9,46 @@ export default function WhyChoose() {
                 Why Choose Spotted Owl?
               </h2>
               <div className="mt-10 max-w-xl space-y-8 text-gray-600 lg:max-w-none">
-                <dl>
-                  <div className="relative flex items-start gap-4">
-                    <span className="w-2 h-2 mx-4 mt-4 rounded-full bg-black flex-shrink-0"></span>
-                    <div>
-                      <dt className="font-bold text-base/5 md:text-xl/7 text-brand-green bg-brand-yellow px-4 md:px-2 py-1 inline-block rounded">
-                        All-in-One Essential Service Management
-                      </dt>
-                      <dd className="block text-base/7">
-                        We cover all four essential home services including
-                        electric, gas, plumbing, and drainage in one friendly
-                        offering.
-                      </dd>
+                <div className="relative flex items-start gap-4">
+                  <span className="w-2 h-2 mx-4 mt-4 rounded-full bg-black flex-shrink-0"></span>
+                  <div>
+                    <div className="font-bold text-base/5 md:text-xl/7 text-brand-green bg-brand-yellow px-4 md:px-2 py-1 inline-block rounded">
+                      All-in-One Essential Service Management
+                    </div>
+                    <div className="block text-base/7">
+                      We cover all four essential home services including
+                      electric, gas, plumbing, and drainage in one friendly
+                      offering.
                     </div>
                   </div>
+                </div>
 
-                  <div className="relative flex items-start gap-4">
-                    <span className="w-2 h-2 mx-4 mt-4 rounded-full bg-black flex-shrink-0"></span>
-                    <div>
-                      <dt className="font-bold text-base/5 md:text-xl/7 text-brand-green bg-brand-yellow px-4 md:px-2 py-1 inline-block rounded">
-                        Workmanship guarantees
-                      </dt>
-                      <dd className="block text-base/7">
-                        Our commitment to excellence is backed by a 12-month
-                        guarantee on all our workmanship.
-                      </dd>
+                <div className="relative flex items-start gap-4">
+                  <span className="w-2 h-2 mx-4 mt-4 rounded-full bg-black flex-shrink-0"></span>
+                  <div>
+                    <div className="font-bold text-base/5 md:text-xl/7 text-brand-green bg-brand-yellow px-4 md:px-2 py-1 inline-block rounded">
+                      Workmanship guarantees
+                    </div>
+                    <div className="block text-base/7">
+                      Our commitment to excellence is backed by a 12-month
+                      guarantee on all our workmanship.
                     </div>
                   </div>
+                </div>
 
-                  <div className="relative flex items-start gap-4">
-                    <span className="w-2 h-2 mx-4 mt-4 rounded-full bg-black flex-shrink-0"></span>
-                    <div>
-                      <dt className="font-bold text-base/5 md:text-xl/7 text-brand-green bg-brand-yellow px-4 md:px-2 py-1 inline-block rounded">
-                        Simple, clear pricing
-                      </dt>
-                      <dd className="block text-base/7">
-                        We publish our rates, provide detailed quotes,
-                        comprehensive reports, and clear invoices so you
-                        don(U+2019)t get surprises.
-                      </dd>
+                <div className="relative flex items-start gap-4">
+                  <span className="w-2 h-2 mx-4 mt-4 rounded-full bg-black flex-shrink-0"></span>
+                  <div>
+                    <div className="font-bold text-base/5 md:text-xl/7 text-brand-green bg-brand-yellow px-4 md:px-2 py-1 inline-block rounded">
+                      Simple, clear pricing
+                    </div>
+                    <div className="block text-base/7">
+                      We publish our rates, provide detailed quotes,
+                      comprehensive reports, and clear invoices so you
+                      don(U+2019)t get surprises.
                     </div>
                   </div>
-                </dl>
+                </div>
               </div>
             </div>
           </div>

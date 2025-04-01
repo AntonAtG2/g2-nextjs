@@ -66,13 +66,15 @@ export default function DrainageServiceDetails() {
                 </p>
 
                 {/* Book Now Button */}
-                <button
-                  type="button"
-                  className="self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green min-w-[240px] min-h-[70px] text-base font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase"
-                  aria-label="Book now – go to contact page"
-                >
-                  Book Now
-                </button>
+                <div className="mt-6 mb-6">
+                  <button
+                    type="button"
+                    className="block w-full max-w-xs mx-auto min-h-[70px] min-w-[240px] rounded-full bg-brand-green text-base font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2"
+                    aria-label="Book now – go to contact page"
+                  >
+                    Book Now
+                  </button>
+                </div>
               </div>
             </div>
           </div>
