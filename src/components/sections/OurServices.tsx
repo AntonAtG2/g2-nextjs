@@ -12,7 +12,7 @@ export default function OurServices() {
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid gap-x-32 gap-y-32 items-center md:items-start md:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
+            <div className="grid gap-x-32 gap-y-32 items-center md:items-start md:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
               <div className="flex flex-col h-full">
                 <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
                   <Image
@@ -126,7 +126,7 @@ export default function OurServices() {
                   </a>
                 </div>
               </div>
-            </dl>
+            </div>
           </div>
         </div>
       </div>
