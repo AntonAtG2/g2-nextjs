@@ -1,127 +1,50 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ServiceGridSection } from "@/types/graphql";
 
-export default function OurServices() {
+export default function OurServices({
+  sectionHeader,
+  services,
+}: ServiceGridSection) {
   return (
-    <section>
-      <div className="bg-white py-14 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="mt-0 md:mt-2 text-3xl md:text-4xl text-center md:text-left font-extrabold tracking-tight text-pretty lg:text-balance text-brand-green uppercase">
-              Our Services
+    <section className="bg-white py-14 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {sectionHeader && (
+          <div className="max-w-2xl mx-auto text-center md:text-left">
+            <p className="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-green uppercase">
+              {sectionHeader}
             </p>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <div className="grid gap-x-32 gap-y-32 items-center md:items-start md:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
-              <div className="flex flex-col h-full">
-                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
-                  <Image
-                    src="/assets/icons/plumbing-icon-in-circle.jpg"
-                    alt="Plumbing Services Icon"
-                    width={144} // w-36 = 9rem = 144px
-                    height={144} // h-36 = 9rem = 144px
-                    className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
-                    priority
-                  />
-                  <h2 className="text-2xl/7 font-semibold text-brand-green pt-4 md:pt-7 pb-3">
-                    Plumbing
-                  </h2>
-                  <p className="flex-auto pb-2 md:pb-5">
-                    We offer all plumbing services from leak detection and
-                    repairs to complete new installations.
-                  </p>
-                  <Link
-                    href="/contact-us"
-                    className="inline-block min-w-[240px] min-h-[70px] mt-4 md:mt-7 rounded-full bg-brand-green text-brand-yellow text-base font-semibold shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center leading-[70px]"
-                    aria-label="Book now – go to contact page"
-                  >
-                    BOOK NOW
-                  </Link>
-                </div>
-              </div>
+        )}
 
-              <div className="flex flex-col h-full">
-                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
-                  <Image
-                    src="/assets/icons/electrical-icon-in-circle.jpg"
-                    alt="Electrical Services Icon"
-                    width={144} // w-36 = 9rem = 144px
-                    height={144} // h-36 = 9rem = 144px
-                    className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
-                    priority
-                  />
-                  <h2 className="text-2xl/7 font-semibold text-brand-green pt-4 md:pt-7 pb-3">
-                    Electrical
-                  </h2>
-                  <p className="flex-auto pb-2 md:pb-5">
-                    Our qualified electricians handle fault finding, repairs,
-                    improvements and CoCs.
-                  </p>
-                  <Link
-                    href="/contact-us"
-                    className="inline-block self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center"
-                    aria-label="Book now – go to contact page"
-                  >
-                    Book Now
-                  </Link>
-                </div>
+        <div className="mt-16 sm:mt-20 lg:mt-24">
+          <div className="grid gap-x-32 gap-y-32 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col h-full items-center md:items-start text-center md:text-left"
+              >
+                <Image
+                  src={service.icon.node.mediaItemUrl}
+                  alt={service.icon.node.altText || "Service Icon"}
+                  width={144}
+                  height={144}
+                  className="w-36 h-36 self-center md:self-start"
+                />
+                <h2 className="text-2xl font-semibold text-brand-green pt-4 md:pt-7 pb-3">
+                  {service.serviceTitle}
+                </h2>
+                <p className="pb-2 md:pb-5">{service.serviceDescription}</p>
+                <Link
+                  href={service.buttonUrl.url}
+                  className="inline-block mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase"
+                  aria-label={`${service.buttonUrl.title} – go to contact page`}
+                  target={service.buttonUrl.target || "_self"}
+                >
+                  {service.buttonLabel}
+                </Link>
               </div>
-
-              <div className="flex flex-col h-full">
-                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
-                  <Image
-                    src="/assets/icons/drainage-icon-in-circle.jpg"
-                    alt="Drainage Services Icon"
-                    width={144} // w-36 = 9rem = 144px
-                    height={144} // h-36 = 9rem = 144px
-                    className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
-                    priority
-                  />
-
-                  <h2 className="text-2xl/7 font-semibold text-brand-green pt-4 md:pt-7 pb-3">
-                    Drainage
-                  </h2>
-                  <p className="flex-auto pb-2 md:pb-5">
-                    Our qualified field engineers handle CCTV inspections,
-                    drain-jetting and chemical cleaning.
-                  </p>
-                  <Link
-                    href="/contact-us"
-                    className="inline-block self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center"
-                    aria-label="Book now – go to contact page"
-                  >
-                    Book Now
-                  </Link>
-                </div>
-              </div>
-
-              <div className="flex flex-col h-full">
-                <div className="flex flex-col h-full text-base/7 text-gray-600 items-center text-center md:items-start md:text-left">
-                  <Image
-                    src="/assets/icons/gas-icon-in-circle.jpg"
-                    alt="Gas Serives Icon"
-                    width={144} // w-36 = 9rem = 144px
-                    height={144} // h-36 = 9rem = 144px
-                    className="w-36 h-36 sm:w-32 sm:h-32 self-center md:self-start"
-                    priority
-                  />
-                  <h2 className="text-2xl/7 font-semibold text-brand-green pt-4 md:pt-7 pb-3">
-                    Gas
-                  </h2>
-                  <p className="flex-auto pb-2 md:pb-5">
-                    For your fireplace, gas geyser or stove we handle repairs,
-                    installations and even leak-detection.
-                  </p>
-                  <Link
-                    href="/contact-us"
-                    className="inline-block self-center md:self-start mt-4 md:mt-7 rounded-full bg-brand-green px-6 py-4 min-w-[180px] min-h-[50px] text-sm font-semibold text-brand-yellow shadow-md hover:bg-brand-yellow hover:text-brand-green uppercase text-center"
-                    aria-label="Book now – go to contact page"
-                  >
-                    Book Now
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

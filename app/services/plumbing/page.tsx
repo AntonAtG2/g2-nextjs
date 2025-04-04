@@ -1,14 +1,32 @@
-import { fetchAboutUsContent } from "@/lib/graphql/fetchers/fetchAboutUs";
+import { request } from "graphql-request";
+import { FLEXIBLE_CONTENT_QUERY } from "@/lib/queries";
 import SectionBanner from "@/components/sections/SectionBanner";
 import SubMenu from "@/components/sections/SubMenu";
 import PlumbingServiceDetails from "@/components/sections/PlumbingServiceDetails";
-import WhyChoose from "@/components/sections/WhyChoose";
-import FullWidthImageSection from "@/components/sections/FullWidthImageSection";
 import RenderFlexibleSections from "@/components/RenderFlexibleSections";
-import OurPhilosphy from "@/components/sections/OurPhilosphy";
+import type { FlexibleSection } from "@/types/graphql";
+
+const GRAPHQL_ENDPOINT = "https://spotted-owl.g2dev.co.za/graphql";
 
 export default async function PlumbingServicePage() {
-  const sections = await fetchAboutUsContent();
+  const data = await request<{
+    page: {
+      flexibleContent: {
+        flexibleContentSections: FlexibleSection[];
+      };
+    };
+  }>(GRAPHQL_ENDPOINT, FLEXIBLE_CONTENT_QUERY, { uri: "home" });
+
+  const sections = data.page.flexibleContent.flexibleContentSections;
+
+  const filteredSections = sections.filter((section) =>
+    [
+      "FlexibleContentFlexibleContentSectionsWhyChooseSectionLayout",
+      "FlexibleContentFlexibleContentSectionsBrandImageLayout",
+      "FlexibleContentFlexibleContentSectionsAboutUsLayout",
+      "FlexibleContentFlexibleContentSectionsOurPhilosophyLayout",
+    ].includes(section.__typename)
+  );
 
   return (
     <>
@@ -21,10 +39,7 @@ export default async function PlumbingServicePage() {
       />
       <SubMenu />
       <PlumbingServiceDetails />
-      <WhyChoose />
-      <FullWidthImageSection />
-      <RenderFlexibleSections sections={sections} />
-      <OurPhilosphy />
+      <RenderFlexibleSections sections={filteredSections} />
     </>
   );
 }

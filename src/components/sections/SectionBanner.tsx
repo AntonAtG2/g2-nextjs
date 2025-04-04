@@ -2,10 +2,10 @@ import Image from "next/image";
 
 type SectionBannerProps = {
   heading: string;
-  description: string;
+  description?: string;
   bg: string;
-  icon: string;
-  className?: string; // Optional className prop for customization
+  icon?: string;
+  className?: string;
 };
 
 export default function SectionBanner({
@@ -13,24 +13,29 @@ export default function SectionBanner({
   description,
   bg,
   icon,
-  className = "", // default to an empty string if no className is passed
+  className = "",
 }: SectionBannerProps) {
   return (
     <section
-      className={`relative w-full min-h-[50vh] ${bg} flex items-center justify-center ${className}`}
+      className={`relative w-full min-h-[50vh] ${bg} flex items-center justify-center overflow-hidden ${className}`}
     >
-      <Image
-        src={icon}
-        alt={`${heading} Icon`}
-        width={300} // or whatever size makes sense
-        height={300}
-        className="absolute top-1/4 left-1/4 w-[200px] md:w-[300px]"
-      />
-      <div className="container mx-auto max-w-7xl px-6 lg:px-12">
+      {icon && (
+        <Image
+          src={icon}
+          alt={`${heading} Icon`}
+          width={300}
+          height={300}
+          className="absolute top-1/4 left-1/4 w-[200px] md:w-[300px] opacity-20"
+        />
+      )}
+
+      <div className="relative z-10 container mx-auto max-w-7xl px-6 lg:px-12 text-center">
         <h2 className="text-4xl sm:text-6xl font-bold text-white uppercase">
           {heading}
         </h2>
-        <p className="text-lg sm:text-xl text-white mt-4">{description}</p>
+        {description && (
+          <p className="text-lg sm:text-xl text-white mt-4">{description}</p>
+        )}
       </div>
     </section>
   );

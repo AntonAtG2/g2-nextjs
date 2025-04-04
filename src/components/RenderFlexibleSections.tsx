@@ -1,41 +1,99 @@
-// src/components/RenderFlexibleSections.tsx
-
 import AboutUsBlock from "@/components/sections/AboutUsBlock";
+import OurServices from "@/components/sections/OurServices";
+import WhyChoose from "@/components/sections/WhyChoose";
+import BrandImage from "@/components/sections/BrandImage";
+import OurPhilosophy from "@/components/sections/OurPhilosophy";
 
-type Paragraph = {
-  singleParagraph: string;
-};
+import type {
+  FlexibleSection,
+  AboutUsLayout,
+  ServiceGridSection,
+  WhyChooseSection,
+  BrandImage as BrandImageLayout,
+  OurPhilosophy as OurPhilosophyLayout,
+} from "@/types/graphql";
 
-type BackgroundImage = {
-  node: {
-    sourceUrl: string;
-    altText?: string;
-  };
-};
-
-type AboutUsLayout = {
-  __typename: "FlexibleContentSectionsAboutUsSectionAboutUsLayout";
-  header: string;
-  paragraphRepeater: Paragraph[];
-  backgroundImage?: BackgroundImage;
-};
-
-type FlexibleSection = AboutUsLayout; // Add more layout types here as needed
-
-export default function RenderFlexibleSections({
-  sections,
-}: {
+type Props = {
   sections: FlexibleSection[];
-}) {
+};
+
+// 🔐 Type guards
+function isAboutUs(block: FlexibleSection): block is AboutUsLayout & {
+  __typename: "FlexibleContentFlexibleContentSectionsAboutUsSectionLayout";
+} {
+  return (
+    block.__typename ===
+    "FlexibleContentFlexibleContentSectionsAboutUsSectionLayout"
+  );
+}
+
+function isServices(block: FlexibleSection): block is ServiceGridSection & {
+  __typename: "FlexibleContentFlexibleContentSectionsServiceGridSectionLayout";
+} {
+  return (
+    block.__typename ===
+    "FlexibleContentFlexibleContentSectionsServiceGridSectionLayout"
+  );
+}
+
+function isWhyChoose(block: FlexibleSection): block is WhyChooseSection & {
+  __typename: "FlexibleContentFlexibleContentSectionsWhyChooseSectionLayout";
+} {
+  return (
+    block.__typename ===
+    "FlexibleContentFlexibleContentSectionsWhyChooseSectionLayout"
+  );
+}
+
+function isBrandImage(block: FlexibleSection): block is BrandImageLayout & {
+  __typename: "FlexibleContentFlexibleContentSectionsBrandImageLayout";
+} {
+  return (
+    block.__typename ===
+    "FlexibleContentFlexibleContentSectionsBrandImageLayout"
+  );
+}
+
+function isOurPhilosophy(
+  block: FlexibleSection
+): block is OurPhilosophyLayout & {
+  __typename: "FlexibleContentFlexibleContentSectionsOurPhilosophyLayout";
+} {
+  return (
+    block.__typename ===
+    "FlexibleContentFlexibleContentSectionsOurPhilosophyLayout"
+  );
+}
+
+export default function RenderFlexibleSections({ sections }: Props) {
   return (
     <>
       {sections.map((block, index) => {
-        switch (block.__typename) {
-          case "FlexibleContentSectionsAboutUsSectionAboutUsLayout":
-            return <AboutUsBlock key={index} {...block} />;
-          default:
-            return null;
+        if (isServices(block)) {
+          return <OurServices key={`section-${index}`} {...block} />;
         }
+
+        if (isWhyChoose(block)) {
+          return <WhyChoose key={`section-${index}`} {...block} />;
+        }
+
+        if (isBrandImage(block)) {
+          return <BrandImage key={`section-${index}`} {...block} />;
+        }
+
+        if (isAboutUs(block)) {
+          return <AboutUsBlock key={`section-${index}`} {...block} />;
+        }
+
+        if (isOurPhilosophy(block)) {
+          return <OurPhilosophy key={`section-${index}`} {...block} />;
+        }
+
+        if (process.env.NODE_ENV === "development") {
+          console.warn("⚠️ No match for:", block.__typename);
+        }
+
+        return null;
       })}
     </>
   );
