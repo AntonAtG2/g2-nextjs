@@ -11,9 +11,9 @@ export default function OurServices({
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {sectionHeader && (
           <div className="max-w-2xl mx-auto text-center md:text-left">
-            <p className="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-green uppercase">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-green uppercase text-left">
               {sectionHeader}
-            </p>
+            </h1>
           </div>
         )}
 
