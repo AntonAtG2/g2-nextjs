@@ -11,7 +11,6 @@ type AboutUsData = {
 };
 
 import { request } from "graphql-request";
-import { ABOUT_US_QUERY } from "@/lib/queries"; // or define inline
 
 const GRAPHQL_ENDPOINT = "https://spotted-owl.g2dev.co.za/graphql";
 
