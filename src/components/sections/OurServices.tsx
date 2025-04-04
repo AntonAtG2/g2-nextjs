@@ -10,7 +10,7 @@ export default function OurServices({
     <section className="bg-white py-14 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {sectionHeader && (
-          <div className="max-w-2xl mx-auto text-center md:text-left">
+          <div className="max-w-2xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-green uppercase text-left">
               {sectionHeader}
             </h1>
