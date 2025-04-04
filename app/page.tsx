@@ -7,6 +7,9 @@ import type { FlexibleSection } from "@/types/graphql";
 
 const GRAPHQL_ENDPOINT = "https://spotted-owl.g2dev.co.za/graphql";
 
+// ⏱ Enable Incremental Static Regeneration (ISR) every 60 seconds
+export const revalidate = 60;
+
 type FlexibleContentData = {
   page: {
     title: string;
@@ -20,7 +23,7 @@ export default async function HomePage() {
   const data: FlexibleContentData = await request(
     GRAPHQL_ENDPOINT,
     FLEXIBLE_CONTENT_QUERY,
-    { uri: "home" } // 👈 Pass the required variable here
+    { uri: "home" }
   );
 
   const sections = data.page.flexibleContent.flexibleContentSections;
