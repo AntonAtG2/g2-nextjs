@@ -17,10 +17,6 @@ const GRAPHQL_ENDPOINT = "https://spotted-owl.g2dev.co.za/graphql";
 // ✅ Server-side logging during build
 export async function getStaticProps() {
   try {
-    console.log("🧪 Checking ABOUT_US_QUERY import...");
-    console.log("🧪 ABOUT_US_QUERY value:", ABOUT_US_QUERY);
-
-    const data: AboutUsData = await request(GRAPHQL_ENDPOINT, ABOUT_US_QUERY);
     console.log("✅ Raw GraphQL response:", JSON.stringify(data, null, 2));
 
     const content = data?.aboutUsEntries?.nodes?.[0]?.aboutUsContent || null;
