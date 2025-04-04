@@ -1,14 +1,9 @@
-import type { WhyChooseSection } from "@/types/graphql";
-
 type Props = {
   header: string;
   bulletPoints: { bulletHeader: string; bulletText: string }[];
 };
 
-export default function WhyChoose({
-  header,
-  bulletPoints = [], // Default to an empty array if undefined
-}: Props) {
+export default function WhyChoose({ header, bulletPoints = [] }: Props) {
   return (
     <div className="overflow-hidden bg-brand-light-green py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -34,7 +29,7 @@ export default function WhyChoose({
                   </div>
                 ))
               ) : (
-                <p>No bullet points available</p> // Handle empty bullet points gracefully
+                <p>No bullet points available</p>
               )}
             </div>
           </div>
