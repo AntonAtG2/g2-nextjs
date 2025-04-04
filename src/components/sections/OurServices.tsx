@@ -31,7 +31,7 @@ export default function OurServices({
                   height={144}
                   className="w-36 h-36 self-center md:self-start"
                 />
-                <h2 className="text-2xl font-semibold text-brand-green pt-4 md:pt-7 pb-3">
+                <h2 className="text-2xl font-semibold text-brand-green pt-4 md:pt-7 pb-3 text-left">
                   {service.serviceTitle}
                 </h2>
                 <p className="pb-2 md:pb-5">{service.serviceDescription}</p>
